@@ -47,6 +47,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.EmployeeWage_computation_problem.executor": "Run",
     "Application.HelloWorld.executor": "Run",
     "Application.if_else_statement.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
@@ -62,7 +63,20 @@
     "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.if_else_statement">
+  <component name="RunManager" selected="Application.EmployeeWage_computation_problem">
+    <configuration name="EmployeeWage_computation_problem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="day3.practice.EmployeeWage_computation_problem" />
+      <module name="Java_practice_2026" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="day3.practice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="HelloWorld" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="HelloWorld" />
       <module name="Java_practice_2026" />
@@ -85,6 +99,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.EmployeeWage_computation_problem" />
         <item itemvalue="Application.if_else_statement" />
         <item itemvalue="Application.HelloWorld" />
       </list>
