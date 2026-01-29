@@ -1,55 +1,55 @@
 package day8.practice;
 
 public class EmployeeWageComputation {
+    public static void main(String[] args) {
 
-    // Class Variables
-    static final int EMP_RATE_PER_HOUR = 20;
-    static final int FULL_TIME_HOURS = 8;
-    static final int PART_TIME_HOURS = 8;
-    static final int MAX_WORKING_DAYS = 20;
-    static final int MAX_WORKING_HOURS = 100;
+        System.out.println("Welcome to Employee Wage Computation Program on Master Branch\n");
 
-    // Class Method to Compute Employee Wage
-    public static void computeEmployeeWage() {
+        int wage_per_hour = 20;
+        int full_day_hour = 8;
+        int part_time_hour = 4;
+        int working_day_permonth = 20;
 
-        int totalWorkingDays = 0;
-        int totalWorkingHours = 0;
         int totalWage = 0;
+        int totalWorkingHours = 0;
 
-        while (totalWorkingDays < MAX_WORKING_DAYS &&
-                totalWorkingHours < MAX_WORKING_HOURS) {
+        int present = 0;
+        int absent = 0;
 
-            totalWorkingDays++;
+        for (int day = 1; day <= working_day_permonth; day++) {
 
-            int empHours = 0;
-            int empType = (int) (Math.random() * 3); // 0,1,2
+            // 0 = Absent, 1 = Part Time, 2 = Full Time
+            int randomInt = (int) (Math.random() * 3);
+            int workingHours = 0;
 
-            switch (empType) {
+            switch (randomInt) {
                 case 1:
-                    empHours = FULL_TIME_HOURS;
+                    workingHours = part_time_hour;
+                    present++;
+                    System.out.println("Day " + day + ": Part Time Employee");
                     break;
 
                 case 2:
-                    empHours = PART_TIME_HOURS;
+                    workingHours = full_day_hour;
+                    present++;
+                    System.out.println("Day " + day + ": Full Time Employee");
                     break;
 
                 default:
-                    empHours = 0;
+                    workingHours = 0;
+                    absent++;
+                    System.out.println("Day " + day + ": Employee Absent");
             }
 
-            totalWorkingHours += empHours;
-            totalWage += empHours * EMP_RATE_PER_HOUR;
+            int dailyWage = workingHours * wage_per_hour;
+            totalWage += dailyWage;
+            totalWorkingHours += workingHours;
         }
 
-        System.out.println("Total Working Days: " + totalWorkingDays);
+        System.out.println("\nTotal Working Days: " + working_day_permonth);
+        System.out.println("Total Present Days: " + present);
+        System.out.println("Total Absent Days: " + absent);
         System.out.println("Total Working Hours: " + totalWorkingHours);
-        System.out.println("Total Employee Wage: ₹" + totalWage);
-    }
-
-    public static void main(String[] args) {
-
-        System.out.println("Welcome to Employee Wage Computation Program");
-        computeEmployeeWage();
+        System.out.println("Total Monthly Wage: " + totalWage);
     }
 }
-
